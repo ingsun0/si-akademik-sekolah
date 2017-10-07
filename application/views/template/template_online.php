@@ -21,7 +21,7 @@
         <!-- start: MAIN CSS -->
         <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
         <link type="text/css" rel="stylesheet" href="http://www.cliptheme.com/preview/cliponeV2/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-        <link type="text/css" rel="stylesheet" href="http://www.cliptheme.com/preview/cliponeV2/Admin/bower_components/font-awesome/css/font-awesome.min.css" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>template/font-awesome/css/font-awesome.min.css" />
         <link type="text/css" rel="stylesheet" href="http://www.cliptheme.com/preview/cliponeV2/Admin/clip-one-template/clip-one/assets/fonts/clip-font.min.css" />
         <link type="text/css" rel="stylesheet" href="http://www.cliptheme.com/preview/cliponeV2/Admin/bower_components/iCheck/skins/all.css" />
         <link type="text/css" rel="stylesheet" href="http://www.cliptheme.com/preview/cliponeV2/Admin/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" />
@@ -452,18 +452,18 @@
                                     </a>
                                     <ul class='sub-menu'>";
                                 foreach ($submenu->result() as $sub) {
-                                    echo "<li>" . anchor($sub->link, "<i class='" . $sub->icon . "'></i> " . strtoupper($sub->nama_menu)) . "</li>";
+                                    echo "<li>" . anchor($sub->link, "<i class='" . $sub->icon . "'></i> <span class='title'>" . strtoupper($sub->nama_menu)) . "</span></li>";
                                 }
 
                                 echo"</ul>
                                     </li>";
                             } else {
                                 // tampilkan main menu
-                                echo "<li>" . anchor($main->link, "<i class='" . $main->icon . "'></i>" . strtoupper($main->nama_menu)) . "</li>";
+                                echo "<li>" . anchor($main->link, "<i class='" . $main->icon . "'></i><span class='title'>" . strtoupper($main->nama_menu)) . "</span></li>";
                             }
                         }
                         ?>
-                        <li><a href="<?php echo base_url() ?>/auth/logout"><i class="fa fa-sign-out"></i>LOGOUT</a></li>
+                        <li><a href="<?php echo base_url() ?>/auth/logout"><i class="fa fa-sign-out"></i><span class='title'>LOGOUT</span></a></li>
 
                     </ul>
                     <!-- end: MAIN NAVIGATION MENU -->
